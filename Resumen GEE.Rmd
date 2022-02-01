@@ -1,0 +1,52 @@
+---
+title: "RESUMEN GEE"
+author: "Nolberto Comeca"
+date: "31/1/2022"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## RESUMEN DE EXPO DE GEE
+
+```{r cars}
+## Basicamente nuestra exposicion trato respecto al code editor del GEE, las diversas ventanas que encontrabanos, las funciones que cumplian cada una de estas y tambien respecto al lenguaje java script que utilizaba la herramienta para realizar el codigo.
+
+- Scripts, aqui vamos a poder crear repositorios y carpetas
+- Docs, ahi tendremos diversas funciones para la hora que desarrollemos el   codigo
+- Assets, aqui veremos todos los archivos que importemos
+
+- Get link, aqui obtendremos el link del codigo que estemos desarrollando   y podremos compartirselo a otros para que tambien lo vean 
+- Save, para guardar
+- Run, para ejecutar 
+- Reset, para limpiar tu codigo
+- Apps, para la creaccion de aplicaciones
+
+- Inspector, ahi no va botar datos como la latitud, longitud, escala y      zoom, siempre y cuando hagamos click en el mapa del code editor
+- Console, ahi observaremos todo lo que se ejecuta del script 
+- Tasks
+
+## Tambien vimos como seleccionar una imagen, para lo cual expusimos los pasos de como hacerlo
+
+## A continuacion el codigo del ejemplo que realize en mi exposicion 
+// Seleccionar imagenes
+
+// Landsat 5 TM Collection 1 Tier 1 Raw Scenes
+
+var L5 = ee.ImageCollection("LANDSAT/LT05/C01/T1").
+ filterMetadata("CLOUD_COVER", "less_than", 20).
+ filterMetadata("WRS_PATH", "equals", 3).
+ filterMetadata("WRS_ROW", "equals", 69).
+ filterDate("2005-01-01", "2010-01-01")
+print (L5)
+
+// Seleccionar una imagen 
+
+var img = ee.Image("LANDSAT/LT05/C01/T1/LT05_003069_20050716")
+print(img)
+```
+
+
+
